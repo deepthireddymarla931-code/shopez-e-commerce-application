@@ -1,0 +1,14 @@
+{
+  "name": "shopez-stock-trader",
+  "version": "1.0.0",
+  "description": "ShopEZ Stock Trader - MERN Stock Trading System",
+  "main": "start.js",
+  "scripts": {
+    "install-all": "cmd.exe /c \"npm install --prefix backend && npm install --prefix frontend\"",
+    "dev": "node start.js",
+    "start": "node start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

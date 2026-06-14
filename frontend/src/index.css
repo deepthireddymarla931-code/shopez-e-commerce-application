@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #070b13;
+  --bg-secondary: #0c1322;
+  --card-bg: rgba(16, 26, 48, 0.6);
+  --card-border: rgba(255, 255, 255, 0.07);
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --accent-cyan: #00f2fe;
+  --accent-purple: #9d4edd;
+  --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --btn-gradient: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 100%);
+  
+  --color-up: #10b981;
+  --color-down: #f43f5e;
+  --color-up-bg: rgba(16, 185, 129, 0.12);
+  --color-down-bg: rgba(244, 63, 94, 0.12);
+  
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(157, 78, 221, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(0, 242, 254, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(79, 172, 254, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 242, 254, 0.3);
+  box-shadow: 0 12px 40px -10px rgba(0, 242, 254, 0.2);
+}
+
+/* Typography Accents */
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom Buttons */
+.btn-premium-cyan {
+  background: var(--accent-gradient);
+  color: #070b13;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+.btn-premium-cyan:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+  color: #070b13;
+}
+
+.btn-premium-purple {
+  background: var(--btn-gradient);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+}
+.btn-premium-purple:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.5);
+  color: #fff;
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.2s;
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Stock Badges */
+.badge-up {
+  background-color: var(--color-up-bg);
+  color: var(--color-up);
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badge-down {
+  background-color: var(--color-down-bg);
+  color: var(--color-down);
+  font-weight: 600;
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+/* Dynamic updates animation */
+@keyframes flash-up {
+  0% { background-color: rgba(16, 185, 129, 0.4); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-down {
+  0% { background-color: rgba(244, 63, 94, 0.4); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flash-up 1s ease-out;
+}
+
+.flash-down {
+  animation: flash-down 1s ease-out;
+}
+
+/* Navbar Customization */
+.navbar-custom {
+  background: rgba(7, 11, 19, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Custom Table Styles */
+.table-custom {
+  color: var(--text-main) !important;
+}
+.table-custom th {
+  background: rgba(255, 255, 255, 0.02) !important;
+  color: var(--text-muted) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--card-border) !important;
+}
+.table-custom td {
+  background: transparent !important;
+  border-bottom: 1px solid var(--card-border) !important;
+  vertical-align: middle;
+}
+.table-custom tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Inputs styling */
+.form-control-custom {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-main) !important;
+  border-radius: 8px !important;
+}
+.form-control-custom:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 242, 254, 0.15) !important;
+}
+
+.form-select-custom {
+  background-color: #0c1322 !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-main) !important;
+  border-radius: 8px !important;
+}
+.form-select-custom:focus {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 242, 254, 0.15) !important;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 991.98px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
